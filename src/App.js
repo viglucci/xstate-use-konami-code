@@ -1,21 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import useKonamiCode from "./useKonamiCode";
 
 function App() {
-  const wasCodeEntered = useKonamiCode();
+  const correctCodeEntered = useKonamiCode();
 
+  // Show an alert dialog if the key sequence is completed
   useEffect(() => {
-    if (wasCodeEntered) {
-      alert("You entered the Konami code!")
+    if (correctCodeEntered) {
+      alert("You entered the Konami code!");
     }
-  }, [wasCodeEntered]);
+  }, [correctCodeEntered]);
 
   return (
     <div className="App">
-      <span>Enter the key sequence:</span>
-      <code style={{ paddingLeft: 6 }}>
-        up up down down left right left right B A
-      </code>
+      <p>
+        <span>Enter the key sequence:</span>
+        <code style={{ paddingLeft: 6 }}>
+          up up down down left right left right B A
+        </code>
+      </p>
+      <p>After a successful input of the sequence the hook will reset.</p>
+      <p>
+        Wait 3 seconds between attempts for the previous input to automatically
+        clear.
+      </p>
     </div>
   );
 }
