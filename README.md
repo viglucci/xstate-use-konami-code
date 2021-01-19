@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# XState useKonamiCode
+
+Inspired by [useKonamiCode](https://usehooks.com/useKonamiCode) from [usehooks.com](https://usehooks.com).
+
+## Bootstrapped with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
