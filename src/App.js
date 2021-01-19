@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import useKonamiCode from "./useKonamiCode";
 
 function App() {
+  const wasCodeEntered = useKonamiCode();
+
+  useEffect(() => {
+    if (wasCodeEntered) {
+      alert("You entered the Konami code!")
+    }
+  }, [wasCodeEntered]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <span>Enter the key sequence:</span>
+      <code style={{ paddingLeft: 6 }}>
+        up up down down left right left right B A
+      </code>
     </div>
   );
 }
