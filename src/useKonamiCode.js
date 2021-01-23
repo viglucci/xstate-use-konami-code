@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useMachine } from "@xstate/react";
 import konamiCodeMachine from "./konami-code-fsm";
 
-// uncomment to enable xstate debug
-// import { inspect } from '@xstate/inspect';
+// uncomment below to enable xstate debug
+import { inspect } from '@xstate/inspect';
 
-// uncomment to enable xstate debug
-// inspect({
-//     url: 'https://statecharts.io/inspect',
-//     iframe: false
-// });
+// uncomment below to enable xstate debug
+inspect({
+  url: 'https://statecharts.io/inspect',
+  iframe: false
+});
 
 function useKonamiCode() {
   const [currentState, send] = useMachine(konamiCodeMachine, {
